@@ -1,1 +1,13 @@
-<script>window.location.replace("https://www.bing.com")</script>
+<script>
+  getQueryString(name) {
+    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    if(window.location.hash.indexOf("?") < 0) {
+      return null;
+    }
+    let r = window.location.hash.split("?")[1].match(reg); 　　
+    if (r != null) return decodeURIComponent(r[2]); 
+      return null; 
+  }
+  console.log('name is ',getQueryString('name'))  
+  window.location.replace("https://www.bing.com#" + getQueryString('name'))
+</script>
