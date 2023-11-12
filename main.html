@@ -1,5 +1,5 @@
 <script>
   let r = window.location.hash;
   //window.location.replace("https://www.bing.com/" + r);
-  window.location.replace(Base64.decode(r.substring(0)));
+  window.location.replace(decodeURIComponent(escape(window.atob((r.substring(0)));
 </script>
