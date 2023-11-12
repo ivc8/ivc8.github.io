@@ -1,7 +1,7 @@
 <script>
   let r = window.location.hash;
   //window.location.replace("https://www.bing.com/" + r);
-  let url = r.substring(0);
+  let url = r.substring(1);
   console.log(url);
   window.location.replace(window.atob(url));
 </script>
